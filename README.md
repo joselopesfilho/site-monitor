@@ -11,6 +11,7 @@ Este é um simples script Python que verifica o status de um site especificado e
 
 * Python 3.x instalado.
 * Biblioteca Python: requests.
+* Telegram Bot: BotFather.
 
 ## 3. Instalação
 
@@ -40,13 +41,24 @@ pip3 install requests
 ### 4.2. Encontrando o Chat ID:
 
 1. Envie uma mensagem para o seu bot no Telegram.
-2. Abra o seguinte URL no seu navegador da web, substituindo 'SEU_TOKEN' pelo token do seu bot: `https://api.telegram.org/botSEU_TOKEN/getUpdates`. Assegure-se que o Bot foi devidamente inicializado no seu telegram - Seção 4.1, passo 3, caso contrário você não terá nenhum retorno.
+2. Abra o seguinte URL no seu navegador da web, substituindo 'SEU_TOKEN' pelo token do seu bot: `https://api.telegram.org/botSEU_TOKEN/getUpdates`. Assegure-se que o Bot foi devidamente inicializado no seu telegram, caso contrário você não terá nenhum retorno.
 3. Procure pelo campo `"chat"` em algum lugar na resposta JSON. O valor do campo `"id"` neste objeto é o seu `chat_id`.
 4. Anote o `chat_id` para uso em seu código.
 
 Parabéns. Você configurou com sucesso seu bot no Telegram para receber notificações sobre o status do seu site!
 
-### 4.3. Edite o arquivo monitor.py e insira o token do bot e o seu ID de chat.
+### 4.3. Edite o arquivo monitor.py, procure as variáveis ´bot_token´ e ´bot_chatID´ e insira o token do bot e o seu ID de chat obtidos no processo de criação do BotFather.
+
+```
+bot_token = 'YOUR_REAL_TOKEN'  # Substitua pelo seu token real
+bot_chatID = 'YOUR_REAL_CHATID'  # Substitua pelo seu chatID real
+```
+
+### 4.4. Procure a variável ´website_url´ e insira a URL completa do site que você deseja monitorar.
+
+```
+website_url = 'http://www.YOUR-WEBSITE-HERE.com'
+```
 
 ## 5. Uso
 Execute o script monitor.py:

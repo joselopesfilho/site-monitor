@@ -65,8 +65,8 @@ STATUS_CODES = {
 }
 
 def telegram_bot_sendtext(bot_message):
-    bot_token = '7139158400:AAH0IPUZ6BlCNqu3OvnDnYGQbpFnWUcrjxo'  # Substitua pelo seu token real
-    bot_chatID = '815348343'  # Substitua pelo seu chatID real
+    bot_token = 'YOUR_REAL_TOKEN'  # Substitua pelo seu token real
+    bot_chatID = 'YOUR_REAL_CHATID'  # Substitua pelo seu chatID real
     send_text = f'https://api.telegram.org/bot{bot_token}/sendMessage?chat_id={bot_chatID}&parse_mode=Markdown&text={bot_message}'
 
     response = requests.get(send_text)
@@ -83,7 +83,7 @@ def get_website_status(url):
         return f"Error: {str(e)}"
 
 def main():
-    website_url = 'http://www.saintgeorge.com.br'
+    website_url = 'http://www.YOUR-WEBSITE-HERE.com'
     website_status = get_website_status(website_url)
     telegram_bot_sendtext(website_status)
 

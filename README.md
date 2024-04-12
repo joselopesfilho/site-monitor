@@ -68,10 +68,12 @@ python main.py
 ```
 
 O script verificará o status do site especificado e enviará uma mensagem para o bot do Telegram com as informações.
----------------------------------------------------------------------------------------------------------------------------
+
 ## 6. Configurando um Cron Job em um VPS Linux
 
-6.1. Logando em um VPS Linux:
+Caso deseje fazer esse processo, você deverá ter um servidor Linux disponível 24/7. No meu caso, contratei esse serviço com uma empresa de hospedagem.
+
+### 6.1. Logando em um VPS Linux:
 
 Para acessar um servidor VPS (Virtual Private Server) Linux, você precisará de um cliente SSH. No terminal do seu computador local, use o seguinte comando:
 
@@ -89,7 +91,7 @@ ssh usuario@192.0.2.0
 
 Você será solicitado a inserir a senha do seu usuário no servidor. Após inserir a senha correta, você estará conectado ao seu VPS.
 
-**2. Criando um diretório:**
+### 6.2. Criando um diretório:
 
 Depois de logar no seu VPS, você pode criar um diretório usando o comando `mkdir`. Por exemplo, para criar um diretório chamado `meu_diretorio`, execute:
 
@@ -97,7 +99,7 @@ Depois de logar no seu VPS, você pode criar um diretório usando o comando `mkd
 mkdir meu_diretorio
 ```
 
-**3. Copiando um arquivo Python para o diretório no VPS:**
+### 6.3. Copiando um arquivo Python para o diretório no VPS:
 
 Para copiar um arquivo Python do seu computador para o VPS, você pode usar o comando `scp`. Por exemplo, se o seu arquivo Python se chama `monitor.py` e está no diretório atual do seu computador local e você deseja copiá-lo para o diretório `meu_diretorio` no VPS, execute:
 
@@ -107,29 +109,28 @@ scp monitor.py nome_de_usuario@endereco_do_vps:/caminho/para/meu_diretorio/
 
 Substitua `monitor.py` pelo nome do seu arquivo Python, `nome_de_usuario` pelo seu nome de usuário no servidor, `endereco_do_vps` pelo endereço IP ou nome de domínio do seu servidor, e `/caminho/para/meu_diretorio/` pelo caminho completo para o diretório no VPS.
 
-**4. Configurando um Cron Job para executar o script periodicamente:**
+### 6.4. Configurando um Cron Job para executar o script periodicamente:
 
 Para configurar um cron job, você pode usar o comando `crontab -e` para editar o cron job do seu usuário. Adicione uma linha ao arquivo crontab com o seguinte formato:
 
 ```
-minuto hora * * * /caminho/para/python3 /caminho/para/meu_diretorio/monitor.py
+minuto hora * * * python3 /caminho/para/meu_diretorio/monitor.py
 ```
 
-Substitua `minuto` e `hora` pelos minutos e horas em que deseja que o script seja executado. Use `*` para indicar "qualquer" valor. Substitua `/caminho/para/python3` pelo caminho para o interpretador Python no seu sistema e `/caminho/para/meu_diretorio/monitor.py` pelo caminho completo para o seu script Python no VPS.
+Substitua `minuto` e `hora` pelos minutos e horas em que deseja que o script seja executado. Use `*` para indicar "qualquer" valor. Substitua `/caminho/para/meu_diretorio/monitor.py` pelo caminho completo para o seu script Python no VPS.
 
 Por exemplo, para executar o script todos os dias às 3 da manhã, a linha seria:
 
 ```
-0 3 * * * /usr/bin/python3 /caminho/para/meu_diretorio/monitor.py
+0 3 * * * python3 /caminho/para/meu_diretorio/monitor.py
 ```
 
 Depois de adicionar essa linha ao arquivo crontab e salvar as alterações, o cron job será configurado para executar o script Python periodicamente.
 
------------------------------------------------------------------------------------------------------------------
-## 6. Contribuição
+## 7. Contribuição
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
 
-## 7. Licença
+## 8. Licença
 
 Este projeto é licenciado sob a MIT License.

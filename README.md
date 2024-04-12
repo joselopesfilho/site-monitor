@@ -1,11 +1,11 @@
 # Site Checker Telegram Bot
-Este é um simples script Python que verifica o status de um site especificado e envia uma mensagem para um bot do Telegram com informações sobre o status do site.
+Este é um script Python que verifica o status HTTP de um site especificado e envia uma mensagem para um bot no Telegram.
 
 ## 1. Funcionalidades
 
-1. Verifica o status de um site especificado.
-2. Envia uma mensagem para um bot do Telegram com informações sobre o status do site.
-3. Pode ser configurado para executar periodicamente a verificação do status do site.
+1. Verifica o status HTTP de um site especificado.
+2. Envia uma mensagem para um bot do Telegram com o código HTTP e a descrição desse código.
+3. Pode ser configurado para executar periodicamente a verificação do status do site. (Nesse projeto, utilizei um servidor virtual privado - VPS Linux + Cron Job para automatizar a verificação e enviar as mensagens de tempos em tempos automaticamente).
 
 ## 2. Pré-requisitos
 

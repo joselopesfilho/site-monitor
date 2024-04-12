@@ -129,7 +129,8 @@ Depois de adicionar essa linha ao arquivo crontab e salvar as alterações, o cr
 
 ## 7. Contribuição
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
+Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request. 
+Caso deseje entender o código parte por parte, ele se encontra intenramente documentado no arquivo Jupyter ´monitor_notebook.ipynb´
 
 ## 8. Licença
 
